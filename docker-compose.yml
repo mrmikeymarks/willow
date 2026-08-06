@@ -86,7 +86,7 @@ services:
     user: root
     ports:
       - "8481:8080"
-      - "84000:50000"
+      - "8444:50000"
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
