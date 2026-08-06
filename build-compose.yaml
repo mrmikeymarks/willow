@@ -15,7 +15,7 @@ services:
       - ./.:/var/www/html:rw
       - ./docker/willowcms/config/app/cms_app_local.php:/var/www/html/config/app_local.php
       # - ./docker/wiilowcms/
-      - ./docker/willowcms/nginx:/var/log/nginx
+      - ./docker/willowcms/config/nginx:/var/log/nginx
     environment:
       - APP_NAME=WillowCMS
       - DEBUG=true
