@@ -169,7 +169,7 @@ initialize_application() {
     
     # # Step 2: Wait for dependencies
     # wait_for_database
-    wait_for_redis
+    # wait_for_redis
     
     # # Step 3: Ensure composer dependencies
     ensure_dependencies
