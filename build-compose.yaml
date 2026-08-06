@@ -1,18 +1,19 @@
 services:
 
   willowcms:
-    # build:
-    #   context: .
-    #   dockerfile: docker/willowcms/Dockerfile
-    #   args:
-    #     - UID=${UID:-1000}
-    #     - GID=${GID:-1000}
+    build:
+      context: .
+      dockerfile: docker/willowcms/Dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
     image: docker.io/robjects/willow:latest
     ports: 
       - "8081:80"
     volumes:
       - willowcms_data:/var/www/html/
       - ./docker/willowcms/config/app/cms_app_local.php:/var/www/html/config/app_local.php
+      - ./docker/wiilowcms/
       - nginx_logs_data:/var/log/nginx/
     environment:
       - APP_NAME=WillowCMS
@@ -53,7 +54,7 @@ services:
       - WILLOW_ADMIN_USERNAME=admin
       - WILLOW_ADMIN_PASSWORD=password
       - WILLOW_ADMIN_EMAIL=admin@test.com
-      - APP_FULL_BASE_URL=http://localhost:8031
+      - APP_FULL_BASE_URL=http://localhost:8081
 
   mysql:
     image: mysql:8.4.3
@@ -128,3 +129,5 @@ volumes:
   mailpit_data:
   willowcms_data:
   nginx_logs_data:
+
+networks: {}
