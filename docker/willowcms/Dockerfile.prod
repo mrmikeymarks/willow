@@ -126,19 +126,19 @@ ARG GID=1000
 ENV UID=${UID}
 ENV GID=${GID}
 
-# Update the nobody user with the provided UID and GID
-RUN deluser nobody 2>/dev/null || true && \
-    delgroup nobody 2>/dev/null || true && \
+# Update the appuser user with the provided UID and GID
+RUN deluser appuser 2>/dev/null || true && \
+    delgroup appuser 2>/dev/null || true && \
     if ! getent group ${GID} >/dev/null 2>&1; then \
-        addgroup -g ${GID} -S nobody; \
+        addgroup -g ${GID} -S appuser; \
     else \
-        addgroup -S nobody; \
+        addgroup -S appuser; \
     fi && \
-    adduser -u ${UID} -S -G nobody nobody
+    adduser -u ${UID} -S -G appuser appuser
 
 
 # Copy built application from builder stage
-COPY --from=builder --chown=nobody:nobody /var/www/html /var/www/html/
+COPY --from=builder --chown=appuser:appuser /var/www/html /var/www/html/
 
 # Create necessary directories with proper permissions
 RUN mkdir -p \
@@ -151,7 +151,7 @@ RUN mkdir -p \
         /run \
         /var/lib/nginx \
         /var/log/nginx && \
-    chown -R nobody:nobody \
+    chown -R appuser:appuser \
         /var/www/html \
         /run \
         /var/lib/nginx \
