@@ -63,7 +63,7 @@ services:
       DB_PASSWORD: password
       DB_DATABASE: cms
     ports:
-      - "3310:3306"
+      - "84310:3306"
     volumes:
       - mysql_data:/var/lib/mysql
       - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -71,7 +71,7 @@ services:
   phpmyadmin:
     image: phpmyadmin
     ports:
-      - 8082:80
+      - 8432:80
     environment:
       - PMA_HOST=mysql
       - PMA_USER=root
@@ -85,8 +85,8 @@ services:
     privileged: true
     user: root
     ports:
-      - "8081:8080"
-      - "50000:50000"
+      - "8481:8080"
+      - "84000:50000"
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
@@ -97,8 +97,8 @@ services:
   mailpit:
     image: axllent/mailpit:latest
     ports:
-      - "1125:1025"
-      - "8025:8025"
+      - "81125:1025"
+      - "8425:8025"
     volumes:
       - mailpit_data:/data
     environment:
@@ -116,7 +116,7 @@ services:
       - HTTP_USER=root
       - HTTP_PASSWORD=root
     ports:
-      - "8084:8081"
+      - "8434:8081"
     depends_on:
       - willowcms
 
