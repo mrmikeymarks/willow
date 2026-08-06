@@ -1,12 +1,13 @@
 services:
 
   willowcms:
-    build:
-      context: .
-      dockerfile: docker/willowcms/Dockerfile
-      args:
-        - UID=${UID:-1000}
-        - GID=${GID:-1000}
+    # build:
+    #   context: .
+    #   dockerfile: docker/willowcms/Dockerfile
+    #   args:
+    #     - UID=${UID:-1000}
+    #     - GID=${GID:-1000}
+    image: nginx:alpine
     ports: 
       - "8431:80"
     volumes:
