@@ -94,7 +94,8 @@ RUN apk add --no-cache \
     php83-simplexml \
     supervisor \
     bash && \
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* \
+    wget
 
 # Setup document root
 WORKDIR /var/www/html
