@@ -1,5 +1,5 @@
 {
-    "name": "matthewdeaves/willow",
+    "name": "mrmikeymarks/willow",
     "description": "Willow CMS - A Modern Content Management System Built with CakePHP 5.x and AI Integration",
     "license": "GPL-3.0-or-later",
     "type": "project",
@@ -8,13 +8,13 @@
     "authors": [
         {
             "name": "Matthew Deaves",
-            "homepage": "https://github.com/matthewdeaves"
+            "homepage": "https://github.com/mrmikeymarks"
         }
     ],
     "support": {
-        "issues": "https://github.com/matthewdeaves/willow/issues",
-        "source": "https://github.com/matthewdeaves/willow",
-        "docs": "https://github.com/matthewdeaves/willow/blob/main/README.md"
+        "issues": "https://github.com/mrmikeymarks/willow/issues",
+        "source": "https://github.com/mrmikeymarks/willow",
+        "docs": "https://github.com/mrmikeymarks/willow/blob/main/README.md"
     },
     "require": {
         "php": ">=8.1 <8.5",
