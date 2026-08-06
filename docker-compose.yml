@@ -97,7 +97,7 @@ services:
   mailpit:
     image: axllent/mailpit:latest
     ports:
-      - "81125:1025"
+      - "8435:1025"
       - "8425:8025"
     volumes:
       - mailpit_data:/data
