@@ -126,3 +126,4 @@ volumes:
   jenkins_home:
   mailpit_data:
   willowcms_data:
+  nginx_logs_data:
