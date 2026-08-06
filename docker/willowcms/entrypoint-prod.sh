@@ -172,16 +172,16 @@ initialize_application() {
     # wait_for_redis
     
     # # Step 3: Ensure composer dependencies
-    ensure_dependencies
+    # ensure_dependencies
     
     # # Step 4: Validate configuration
-    validate_config
+    # validate_config
     
     # # Step 5: Run migrations
-    run_migrations
+    # run_migrations
     
     # # Step 6: Warm caches
-    warm_caches
+    # warm_caches
     
     log_success "Application initialization completed successfully"
 }
