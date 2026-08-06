@@ -47,7 +47,7 @@ RUN composer install \
     --no-progress
 
 # Copy application source
-COPY /var/www/html .
+COPY . /var/www/html
 
 # Run Composer scripts (post-install, etc.)
 RUN composer run-script post-install-cmd || true
