@@ -136,15 +136,6 @@ RUN deluser nobody 2>/dev/null || true && \
     fi && \
     adduser -u ${UID} -S -G nobody nobody
 
-# Create application user
-#RUN deluser nobody 2>/dev/null || true && \
-#    delgroup nobody 2>/dev/null || true && \
-#    if ! getent group ${GID} >/dev/null 2>&1; then \
-#        addgroup -g ${GID} -S appuser; \
-#    else \
-#        addgroup -S appuser; \
-#    fi && \
-#    adduser -u ${UID} -S -G appuser appuser
 
 # Copy built application from builder stage
 COPY --from=builder --chown=nobody:nobody /var/www/html /var/www/html/
