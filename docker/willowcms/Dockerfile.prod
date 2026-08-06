@@ -170,7 +170,7 @@ RUN wget https://getcomposer.org/installer -O composer-setup.php && \
 
 # Create entrypoint script for initialization
 COPY docker/willowcms/entrypoint-prod.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
 
 # Switch to non-root user
 USER nobody
