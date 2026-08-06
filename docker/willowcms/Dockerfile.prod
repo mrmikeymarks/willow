@@ -38,13 +38,13 @@ ENV COMPOSER_NO_INTERACTION=1
 ENV COMPOSER_MEMORY_LIMIT=-1
 
 # Install dependencies with production optimizations
-RUN composer install \
-    --no-dev \
-    --optimize-autoloader \
-    --no-scripts \
-    --no-interaction \
-    --prefer-dist \
-    --no-progress
+#RUN composer install \
+#    --no-dev \
+#    --optimize-autoloader \
+#    --no-scripts \
+#    --no-interaction \
+#    --prefer-dist \
+#    --no-progress
 
 # Copy application source
 COPY . /var/www/html
