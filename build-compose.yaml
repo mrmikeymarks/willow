@@ -11,7 +11,7 @@ services:
     ports: 
       - "8081:80"
     volumes:
-      - willowcms_data:/var/www/html/
+      # - willowcms_data:/var/www/html/
       - ./.:/var/www/html:rw
       - ./docker/willowcms/config/app/cms_app_local.php:/var/www/html/config/app_local.php
       # - ./docker/wiilowcms/
