@@ -168,7 +168,7 @@ initialize_application() {
     # set_permissions
     
     # # Step 2: Wait for dependencies
-    wait_for_database
+    # wait_for_database
     wait_for_redis
     
     # # Step 3: Ensure composer dependencies
