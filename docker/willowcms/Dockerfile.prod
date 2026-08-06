@@ -150,16 +150,17 @@ RUN mkdir -p \
         /var/www/html/webroot/files/ImageGalleries/preview \
         /run \
         /var/lib/nginx \
-        /var/log/nginx && \
-    chown -R appuser:appuser \
-        /var/www/html \
-        /run \
-        /var/lib/nginx \
-        /var/log/nginx && \
-    chmod -R 755 /var/www/html && \
-    chmod -R 777 /var/www/html/tmp && \
-    chmod -R 777 /var/www/html/logs && \
-    chmod -R 755 /var/www/html/webroot
+        /var/log/nginx 
+#        /var/log/nginx && \
+#    chown -R appuser:appuser \
+#        /var/www/html \
+#        /run \
+#        /var/lib/nginx \
+#        /var/log/nginx && \
+#    chmod -R 755 /var/www/html && \
+#    chmod -R 777 /var/www/html/tmp && \
+#    chmod -R 777 /var/www/html/logs && \
+#    chmod -R 755 /var/www/html/webroot
 
 # Install Composer for runtime (for potential migrations)
 RUN wget https://getcomposer.org/installer -O composer-setup.php && \
