@@ -1,8 +1,8 @@
 services:
 
   willowcms:
-    build:
-      context: .
+    # build:
+    #   context: .
       dockerfile: docker/willowcms/Dockerfile
       args:
         - UID=${UID:-1000}
@@ -10,7 +10,7 @@ services:
     ports: 
       - "8431:80"
     volumes:
-      - .:/var/www/html/
+      - willowcms_data:/var/www/html/
       - ./docker/willowcms/config/app/cms_app_local.php:/var/www/html/config/app_local.php
       - ./logs/nginx:/var/log/nginx/
     environment:
@@ -125,3 +125,4 @@ volumes:
   rabbitmq_data:
   jenkins_home:
   mailpit_data:
+  willowcms_data:
