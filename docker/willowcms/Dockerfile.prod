@@ -30,7 +30,7 @@ RUN wget https://getcomposer.org/installer -O composer-setup.php && \
 WORKDIR /app
 
 # Copy composer files first for better layer caching
-COPY /var/www/htmlcomposer.json /var/www/htmlcomposer.lock* ./
+COPY /var/www/html/composer.json /var/www/html/composer.lock* ./
 
 # Configure Composer for production
 ENV COMPOSER_ALLOW_SUPERUSER=1
