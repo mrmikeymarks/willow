@@ -13,7 +13,7 @@ services:
     volumes:
       - willowcms_data:/var/www/html/
       - ./docker/willowcms/config/app/cms_app_local.php:/var/www/html/config/app_local.php
-      - ./docker/wiilowcms/
+      # - ./docker/wiilowcms/
       - nginx_logs_data:/var/log/nginx/
     environment:
       - APP_NAME=WillowCMS
