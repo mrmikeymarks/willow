@@ -82,21 +82,21 @@ services:
       - PMA_PASSWORD=password
       - UPLOAD_LIMIT=300M
 
-  jenkins:
-    build:
-      context: .
-      dockerfile: docker/jenkins/Dockerfile
-    privileged: true
-    user: root
-    ports:
-      - "8481:8080"
-      - "8444:50000"
-    volumes:
-      - jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./docker/jenkins/jenkins.yaml:/var/jenkins_home/jenkins.yaml
-    environment:
-      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+  # jenkins:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/jenkins/Dockerfile
+  #   privileged: true
+  #   user: root
+  #   ports:
+  #     - "8481:8080"
+  #     - "8444:50000"
+  #   volumes:
+  #     - jenkins_home:/var/jenkins_home
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - ./docker/jenkins/jenkins.yaml:/var/jenkins_home/jenkins.yaml
+  #   environment:
+  #     - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
 
   mailpit:
     image: axllent/mailpit:latest
