@@ -141,16 +141,16 @@ RUN deluser appuser 2>/dev/null || true && \
 COPY --from=builder --chown=appuser:appuser /var/www/html /var/www/html/
 
 # Create necessary directories with proper permissions
-RUN mkdir -p \
-        /var/www/html/tmp/cache/models \
-        /var/www/html/tmp/cache/persistent \
-        /var/www/html/tmp/sessions \
-        /var/www/html/logs \
-        /var/www/html/webroot/files \
-        /var/www/html/webroot/files/ImageGalleries/preview \
-        /run \
-        /var/lib/nginx \
-        /var/log/nginx 
+#RUN mkdir -p \
+#        /var/www/html/tmp/cache/models \
+#        /var/www/html/tmp/cache/persistent \
+#        /var/www/html/tmp/sessions \
+#        /var/www/html/logs \
+#        /var/www/html/webroot/files \
+#        /var/www/html/webroot/files/ImageGalleries/preview \
+#        /run \
+#        /var/lib/nginx \
+#        /var/log/nginx 
 #        /var/log/nginx && \
 #    chown -R appuser:appuser \
 #        /var/www/html \
