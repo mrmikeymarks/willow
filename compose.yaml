@@ -7,7 +7,7 @@ services:
     #   args:
     #     - UID=${UID:-1000}
     #     - GID=${GID:-1000}
-    image: nginx:alpine
+    image: docker.io/robjects/willow:latest
     ports: 
       - "8431:80"
     volumes:
