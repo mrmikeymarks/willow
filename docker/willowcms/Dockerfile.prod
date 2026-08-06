@@ -126,18 +126,28 @@ ARG GID=1000
 ENV UID=${UID}
 ENV GID=${GID}
 
-# Create application user
+# Update the nobody user with the provided UID and GID
 RUN deluser nobody 2>/dev/null || true && \
     delgroup nobody 2>/dev/null || true && \
     if ! getent group ${GID} >/dev/null 2>&1; then \
-        addgroup -g ${GID} -S appuser; \
+        addgroup -g ${GID} -S nobody; \
     else \
-        addgroup -S appuser; \
+        addgroup -S nobody; \
     fi && \
-    adduser -u ${UID} -S -G appuser appuser
+    adduser -u ${UID} -S -G nobody nobody
+
+# Create application user
+#RUN deluser nobody 2>/dev/null || true && \
+#    delgroup nobody 2>/dev/null || true && \
+#    if ! getent group ${GID} >/dev/null 2>&1; then \
+#        addgroup -g ${GID} -S appuser; \
+#    else \
+#        addgroup -S appuser; \
+#    fi && \
+#    adduser -u ${UID} -S -G appuser appuser
 
 # Copy built application from builder stage
-COPY --from=builder --chown=appuser:appuser /var/www/html /var/www/html/
+COPY --from=builder --chown=nobody:nobody /var/www/html /var/www/html/
 
 # Create necessary directories with proper permissions
 RUN mkdir -p \
@@ -150,7 +160,7 @@ RUN mkdir -p \
         /run \
         /var/lib/nginx \
         /var/log/nginx && \
-    chown -R appuser:appuser \
+    chown -R nobody:nobody \
         /var/www/html \
         /run \
         /var/lib/nginx \
@@ -170,7 +180,7 @@ COPY docker/willowcms/entrypoint-prod.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Switch to non-root user
-USER appuser
+USER nobody
 
 # Expose port
 EXPOSE 80
