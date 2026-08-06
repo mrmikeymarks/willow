@@ -42,6 +42,7 @@ RUN apk add --no-cache \
   supervisor \
   wget \
   unzip \
+  git \
   bash && \
   rm -rf /var/lib/apt/lists/*
 
