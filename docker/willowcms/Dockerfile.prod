@@ -27,7 +27,7 @@ RUN wget https://getcomposer.org/installer -O composer-setup.php && \
     composer --version
 
 # Set working directory
-WORKDIR /app
+WORKDIR /var/www/html
 
 # Copy composer files first for better layer caching
 COPY /var/www/html/composer.json /var/www/html/composer.lock* ./
