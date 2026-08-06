@@ -2,15 +2,15 @@ services:
 
   willowcms:
     build:
-      context: ./
-      dockerfile: ./docker/willowcms/Dockerfile
+      context: .
+      dockerfile: /docker/willowcms/Dockerfile
       args:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
     ports: 
       - "8431:80"
     volumes:
-      - .:/var/www/html/
+      - willowcms_data:/var/www/html/
       - ./docker/willowcms/config/app/cms_app_local.php:/var/www/html/config/app_local.php
       - nginx_logs_data:/var/log/nginx/
     environment:
