@@ -8,6 +8,7 @@ services:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
     # image: docker.io/robjects/willow:latest
+    privileged: true
     ports: 
       - "8081:80"
     volumes:
